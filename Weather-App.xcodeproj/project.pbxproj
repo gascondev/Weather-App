@@ -11,6 +11,10 @@
 		552C650B2B96EE8B003689DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552C650A2B96EE8B003689DE /* ContentView.swift */; };
 		552C650D2B96EE8C003689DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552C650C2B96EE8C003689DE /* Assets.xcassets */; };
 		552C65102B96EE8C003689DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552C650F2B96EE8C003689DE /* Preview Assets.xcassets */; };
+		552C65172B96EEEA003689DE /* WeatherResponseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552C65162B96EEEA003689DE /* WeatherResponseDataModel.swift */; };
+		552C651A2B96F2FC003689DE /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552C65192B96F2FC003689DE /* WeatherViewModel.swift */; };
+		552C651D2B9700CE003689DE /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552C651C2B9700CE003689DE /* WeatherModel.swift */; };
+		552C651F2B970203003689DE /* WeatherModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552C651E2B970203003689DE /* WeatherModelMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,11 @@
 		552C650A2B96EE8B003689DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		552C650C2B96EE8C003689DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		552C650F2B96EE8C003689DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		552C65162B96EEEA003689DE /* WeatherResponseDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponseDataModel.swift; sourceTree = "<group>"; };
+		552C65192B96F2FC003689DE /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		552C651B2B96F86C003689DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		552C651C2B9700CE003689DE /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		552C651E2B970203003689DE /* WeatherModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModelMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +60,12 @@
 		552C65072B96EE8B003689DE /* Weather-App */ = {
 			isa = PBXGroup;
 			children = (
+				552C651B2B96F86C003689DE /* Info.plist */,
 				552C65082B96EE8B003689DE /* Weather_AppApp.swift */,
 				552C650A2B96EE8B003689DE /* ContentView.swift */,
+				552C65192B96F2FC003689DE /* WeatherViewModel.swift */,
+				552C651E2B970203003689DE /* WeatherModelMapper.swift */,
+				552C65182B96F2CE003689DE /* Model */,
 				552C650C2B96EE8C003689DE /* Assets.xcassets */,
 				552C650E2B96EE8C003689DE /* Preview Content */,
 			);
@@ -65,6 +78,15 @@
 				552C650F2B96EE8C003689DE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		552C65182B96F2CE003689DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				552C65162B96EEEA003689DE /* WeatherResponseDataModel.swift */,
+				552C651C2B9700CE003689DE /* WeatherModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +160,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				552C650B2B96EE8B003689DE /* ContentView.swift in Sources */,
+				552C651A2B96F2FC003689DE /* WeatherViewModel.swift in Sources */,
+				552C65172B96EEEA003689DE /* WeatherResponseDataModel.swift in Sources */,
 				552C65092B96EE8B003689DE /* Weather_AppApp.swift in Sources */,
+				552C651D2B9700CE003689DE /* WeatherModel.swift in Sources */,
+				552C651F2B970203003689DE /* WeatherModelMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +293,7 @@
 		552C65142B96EE8C003689DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = be246867d5c3a2861f63fceb06fdefba;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -274,9 +301,11 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Weather-App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Weather-App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -295,6 +324,7 @@
 		552C65152B96EE8C003689DE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = be246867d5c3a2861f63fceb06fdefba;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,9 +332,11 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Weather-App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Weather-App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
